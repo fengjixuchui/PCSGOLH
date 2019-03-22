@@ -1,5 +1,6 @@
 #pragma once
 
+
 #define SCRIPT_DIR "X:\\change\\me\\please\\script.lua"
 
 // others

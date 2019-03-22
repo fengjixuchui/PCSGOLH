@@ -78,6 +78,7 @@ public:
 	{
 		return *reinterpret_cast<Vector*>(uintptr_t(this) + 0x302C);
 	}
+
 	ClientClass* GetClientClass()
 	{
 		PVOID pNetworkable = (PVOID)((DWORD)(this) + 0x8);

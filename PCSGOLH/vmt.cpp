@@ -86,7 +86,8 @@ bool VMTHook::setup(void* base, const char * moduleName)
 
 	std::memcpy(&new_vftb1[1], old_vftbl, vftbl_len);
 	new_vftb1[0] = old_vftbl[-1];
-	try {
+	try 
+	{
 		auto guard = detail::protect_guard{ class_base, sizeof(std::uintptr_t), PAGE_READWRITE };
 
 		*(std::uintptr_t**)class_base = &new_vftb1[1];
@@ -107,7 +108,8 @@ std::size_t VMTHook::estimate_vftbl_length(std::uintptr_t* vftbl_start)
 {
 	MEMORY_BASIC_INFORMATION memInfo = { NULL };
 	int m_nSize = -1;
-	do {
+	do 
+	{
 		m_nSize++;
 		VirtualQuery(reinterpret_cast<LPCVOID>(vftbl_start[m_nSize]), &memInfo, sizeof(memInfo));
 

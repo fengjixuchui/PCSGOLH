@@ -25,6 +25,7 @@ If you already sucessfully build project, head to Release folder where you shoul
 ### Injector
 
 DLL Injection works by tricking/forcing the target process into loading a DLL of your choice. After that, the code in that DLL will get executed as part of the target process and will be able to do anything the process itself can.
+
 Usage of included injector: `Injector.exe <dir to .dll>`
 
 ### Example
@@ -83,7 +84,7 @@ For more examples check [examples](https://github.com/xrivendell/PCSGOLH/tree/ma
 ## FAQ
 
 - **My script crashes without throwing any errors**
-	- Make sure that your syntax is right, im working on this.
+	- ~~Make sure that your syntax is right, im working on this~~ Fixed.
 
 ## Authors
 

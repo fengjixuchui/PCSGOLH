@@ -22,7 +22,7 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{34FD7845-8669-48AB-966A-55CD9877EAAE}</ProjectGuid>
     <RootNamespace>PCSGOLH</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -34,7 +34,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>false</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
@@ -121,6 +121,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="binds.cpp" />
+    <ClCompile Include="console.cpp" />
     <ClCompile Include="createmove.cpp" />
     <ClCompile Include="interfaces.cpp" />
     <ClCompile Include="loader.cpp" />
@@ -140,6 +141,7 @@
     <ClInclude Include="cglobalvars.hpp" />
     <ClInclude Include="cliententitylistwrapper.hpp" />
     <ClInclude Include="color.hpp" />
+    <ClInclude Include="console.hpp" />
     <ClInclude Include="cpanel.hpp" />
     <ClInclude Include="cusercmd.hpp" />
     <ClInclude Include="cusercmdwrapper.hpp" />

@@ -32,6 +32,9 @@
     <ClCompile Include="wndproc.cpp">
       <Filter>hooks</Filter>
     </ClCompile>
+    <ClCompile Include="console.cpp">
+      <Filter>console</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="wrappers">
@@ -75,6 +78,9 @@
     </Filter>
     <Filter Include="utils\logger">
       <UniqueIdentifier>{9d608ea1-d1f7-4b32-a2c3-06ed7a944f78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="console">
+      <UniqueIdentifier>{091548ce-d7c7-44e8-bc2a-baeb4492712c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -167,6 +173,9 @@
     </ClInclude>
     <ClInclude Include="events.h">
       <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="console.hpp">
+      <Filter>console</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

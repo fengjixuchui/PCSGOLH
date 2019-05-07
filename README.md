@@ -60,7 +60,7 @@ function OnPaint(panel)
 		for i = 1, _EntityList:GetHighestEntityIndex() do
 			local pEntity = _EntityList:GetEntityFromIndex(i)
 			if pEntity:IsValid() then
-				if pEntity:GetClassId() == 38 then
+				if pEntity:GetClassId() == 40 then
 					if pEntity:IsAlive()
 						and not pEntity:IsDormant()
 						and i ~= _Engine:GetLocalPlayer() then

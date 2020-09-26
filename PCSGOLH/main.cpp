@@ -1,31 +1,36 @@
 #include <Windows.h>
+#include <thread>
+#include <chrono>
 
 #include "sdk.hpp"
 #include "loader.hpp"
+#include "console.hpp"
 
 DWORD WINAPI load(LPVOID base)
 {
-	AllocConsole();
-	freopen("CONOUT$", "w", stdout);
-
+	Console::initialize();
+	
 	Loader::initialize();
+
+	Console::run(base);
 
 	return 0;
 }
 
 BOOL APIENTRY DllMain(_In_ HINSTANCE hDll, DWORD ul_reason_for_call, LPVOID lpReserved)
 {
-	switch (ul_reason_for_call)
+	if (ul_reason_for_call == DLL_PROCESS_ATTACH)
 	{
-	case DLL_PROCESS_ATTACH:
 		DisableThreadLibraryCalls(hDll);
-		CreateThread(nullptr, 0, load, hDll, 0, nullptr);
+		
+		HANDLE thread = CreateThread(nullptr, NULL, load, hDll, NULL, nullptr);
+		if (!thread)
+			return 0;
 
-		break;
-	case DLL_THREAD_ATTACH:
-	case DLL_THREAD_DETACH:
-	case DLL_PROCESS_DETACH:
-		break;
+		CloseHandle(thread);
 	}
+	else if (ul_reason_for_call == DLL_PROCESS_DETACH)
+		return FALSE;
+
 	return TRUE;
 }

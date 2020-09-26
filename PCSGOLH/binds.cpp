@@ -1,6 +1,7 @@
 #include "binds.hpp"
 
 #include "luastate.hpp"
+#include "loader.hpp"
 
 #include "drawmanagerwrapper.hpp"
 #include "cusercmdwrapper.hpp"
@@ -104,7 +105,8 @@ namespace Binds
 				.property("Button", &Events::EventMouse::GetButton),
 			luabind::class_<Events::EventKeyboard>("EventMouse")
 				.property("Type", &Events::EventKeyboard::GetType)
-				.property("KeyCode", &Events::EventKeyboard::GetKeyCode)
+				.property("KeyCode", &Events::EventKeyboard::GetKeyCode),
+			luabind::def("Unload", &Loader::unload)
 		];
 
 		try

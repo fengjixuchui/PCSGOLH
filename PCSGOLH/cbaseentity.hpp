@@ -61,7 +61,7 @@ public:
 	
 	bool IsDormant()
 	{
-		return *reinterpret_cast<bool*>(uintptr_t(this) + 0xED);
+		return *reinterpret_cast<bool*>(uintptr_t(this) + 0xED); // m_bDormant 
 	}
 	
 	Vector GetVecOrigin()
@@ -76,7 +76,7 @@ public:
 	
 	Vector GetPunchAngles()
 	{
-		return *reinterpret_cast<Vector*>(uintptr_t(this) + 0x302C);
+		return *reinterpret_cast<Vector*>(uintptr_t(this) + 0x302C); // m_aimPunchAngle
 	}
 
 	ClientClass* GetClientClass()

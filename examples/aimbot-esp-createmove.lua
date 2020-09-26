@@ -56,7 +56,7 @@ function Aimbot(bCmd)
         for i = 1, pEntityList:GetHighestEntityIndex() do
             local pEntity = pEntityList:GetEntityFromIndex(i)
             if pEntity:IsValid() then
-                if pEntity:GetClassId() == 38 then
+                if pEntity:GetClassId() == 40 then
                     if pEntity:IsAlive() and i ~= pEngine:GetLocalPlayer() then
                         if pEntity:GetTeam() ~= pLocalPlayer:GetTeam() then
                             local Aim_pos = pEntity:GetEyePos() -- maybe change to closest hitbox later
@@ -83,7 +83,7 @@ function OnPaint(panel)
         for i = 1, pEntityList:GetHighestEntityIndex() do
             local pEntity = pEntityList:GetEntityFromIndex(i)
             if pEntity:IsValid() then
-                if pEntity:GetClassId() == 38 then
+                if pEntity:GetClassId() == 40 then
                     if pEntity:IsAlive()
                         and not pEntity:IsDormant()
                         and i ~= pEngine:GetLocalPlayer() then

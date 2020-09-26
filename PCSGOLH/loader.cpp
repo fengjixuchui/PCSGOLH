@@ -3,8 +3,11 @@
 #include "luastate.hpp"
 #include "binds.hpp"
 #include "hooks.hpp"
+#include "console.hpp"
 
 #include <luabind/luabind.hpp>
+
+bool Loader::pendingUnload = false;
 
 namespace Loader
 {
@@ -31,5 +34,27 @@ namespace Loader
 
 		Logger::append(Logger::kLogType::SUCCESS, "Initializing Binds...\n");
 		Binds::initialize();
+	}
+
+	void unload(void)
+	{
+		pendingUnload = true;
+
+		Logger::append(Logger::kLogType::ERROR, "Restoring WindowProc...\n");
+		if (Hooks::gWindowProc != NULL)
+			SetWindowLongPtrA(FindWindow("Valve001", NULL), GWL_WNDPROC, (LONG)Hooks::gWindowProc);
+		std::this_thread::sleep_for(std::chrono::milliseconds(100));
+
+		Logger::append(Logger::kLogType::ERROR, "Unhooking Interfaces...\n");
+		Interfaces::unhook();
+		std::this_thread::sleep_for(std::chrono::milliseconds(100));
+
+		Logger::append(Logger::kLogType::ERROR, "Unloading LuaState...\n");
+		LuaState::unload();
+		std::this_thread::sleep_for(std::chrono::milliseconds(100));
+
+		Logger::append(Logger::kLogType::ERROR, "Destroying Console...\n");
+		Console::destroy();
+		std::this_thread::sleep_for(std::chrono::milliseconds(100));
 	}
 }

@@ -1,4 +1,4 @@
-# PCSGOLH ![](https://img.shields.io/badge/language-C%2B%2B-%23f34b7d.svg) ![](https://img.shields.io/badge/game-CS%3AGO-yellow.svg) ![](https://img.shields.io/badge/platform-Windows-0078d7.svg) ![](https://img.shields.io/badge/arch-x86-red.svg) ![](https://img.shields.io/badge/license-MIT-blue.svg) [![Build status](https://ci.appveyor.com/api/projects/status/muby87gajywws5yj?svg=true)](https://ci.appveyor.com/project/xrivendell/pcsgolh)
+# PCSGOLH ![](https://img.shields.io/badge/language-C%2B%2B-%23f34b7d.svg) ![](https://img.shields.io/badge/game-CS%3AGO-yellow.svg) ![](https://img.shields.io/badge/platform-Windows-0078d7.svg) ![](https://img.shields.io/badge/arch-x86-red.svg) ![](https://img.shields.io/badge/license-MIT-blue.svg) [![Build status](https://ci.appveyor.com/api/projects/status/muby87gajywws5yj?svg=true)](https://ci.appveyor.com/project/xrivendell/pcsgolh) ![](https://img.shields.io/badge/release-outdated-red)
 
 
 PCSGOLH - Pointless Counter-Strike: Global Offensive Lua Hooks. A open-source Lua API for CS:GO hacking written in modern C++
@@ -60,7 +60,7 @@ function OnPaint(panel)
 		for i = 1, _EntityList:GetHighestEntityIndex() do
 			local pEntity = _EntityList:GetEntityFromIndex(i)
 			if pEntity:IsValid() then
-				if pEntity:GetClassId() == 38 then
+				if pEntity:GetClassId() == 40 then
 					if pEntity:IsAlive()
 						and not pEntity:IsDormant()
 						and i ~= _Engine:GetLocalPlayer() then
@@ -73,7 +73,7 @@ function OnPaint(panel)
 end
 Hooks:Register(HOOK_PAINTTRAVERSE, OnPaint)
 ```
-For more examples check [examples](https://github.com/xrivendell/PCSGOLH/tree/master/examples)
+For more examples check [examples](https://github.com/rvndl/PCSGOLH/tree/master/examples)
 
 ## Built With
 
@@ -81,16 +81,11 @@ For more examples check [examples](https://github.com/xrivendell/PCSGOLH/tree/ma
 * [Lua](https://github.com/lua/lua) - Programming language.
 * [LuaBind](https://github.com/luabind/luabind) - Binding C++ functions to lua.
 
-## FAQ
-
-- **My script crashes without throwing any errors**
-	- ~~Make sure that your syntax is right, im working on this~~ Fixed.
-
 ## Authors
 
-* **Sebastian Lyko** - *Initial work* - [xrivendell](https://github.com/xrivendell)
+* **Sebastian Lyko** - *Initial work* - [rvndl](https://github.com/rvndl)
 
-See also the list of [contributors](https://github.com/xrivendell/PCSGOLH/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/rvndl/PCSGOLH/contributors) who participated in this project.
 
 ## License
 
